@@ -5,7 +5,6 @@
 TEST(Disemvowel, HandleEmptyString) {
   char *output = disemvowel((char*) "");
   ASSERT_STREQ("", output);
-  free((char*) output);
 }
 
 TEST(Disemvowel, HandleNoVowels) {
@@ -17,7 +16,6 @@ TEST(Disemvowel, HandleNoVowels) {
 TEST(Disemvowel, HandleOnlyVowels) {
   char *output = disemvowel((char*) "aeiouAEIUOIEAuoiea");
   ASSERT_STREQ("", output);
-  free((char*) output);
 }
 
 TEST(Disemvowel, HandleMorrisMinnesota) {
