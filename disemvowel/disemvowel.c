@@ -5,7 +5,8 @@
 #include <string.h>
 
 char *disemvowel(char *str) {
-  int index, i;
+  int i;
+  int index = 0;
   int length = strlen(str);
   char *result = (char*) calloc(length + 1, sizeof(char));
 	
@@ -20,8 +21,9 @@ char *disemvowel(char *str) {
     }	    
   }
  
-  if (strcmp(result, "")) {
+  if (index == 0) {
     free((char*)result);
+    return (char*) "";
   }
 
   result[index] = '\0';
