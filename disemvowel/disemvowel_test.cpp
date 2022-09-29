@@ -5,31 +5,31 @@
 TEST(Disemvowel, HandleEmptyString) {
   char *output = disemvowel((char*) "");
   ASSERT_STREQ("", output);
-  free ((char*) output);
+  free((char*) output);
 }
 
 TEST(Disemvowel, HandleNoVowels) {
   char *output = disemvowel((char*) "pqrst");
   ASSERT_STREQ("pqrst", output);
-  free ((char*) output);
+  free((char*) output);
 }
 
 TEST(Disemvowel, HandleOnlyVowels) {
   char *output = disemvowel((char*) "aeiouAEIUOIEAuoiea");
   ASSERT_STREQ("", output);
-  free ((char*) output);
+  free((char*) output);
 }
 
 TEST(Disemvowel, HandleMorrisMinnesota) {
   char *output = disemvowel((char*) "Morris, Minnesota");
   ASSERT_STREQ("Mrrs, Mnnst", output);
-  free ((char*) output);
+  free((char*) output);
 }
 
 TEST(Disemvowel, HandlePunctuation) {
   char *output = disemvowel((char*) "An (Unexplained) Elephant!");
   ASSERT_STREQ("n (nxplnd) lphnt!", output);
-  free ((char*) output);
+  free((char*) output);
 }
 
 TEST(Disemvowel, HandleLongString) {
@@ -46,11 +46,11 @@ TEST(Disemvowel, HandleLongString) {
     str[i] = 'a';
   }
   str[size-1] = '\0';
-
-  char *output = disemvowel((char*) "str");
+  char *output = disemvowel(str);
   ASSERT_STREQ("xyz", output);
+
   free(str);
-  free ((char*) output);
+  free((char*) output);
 }
 
 int main(int argc, char *argv[]) {
