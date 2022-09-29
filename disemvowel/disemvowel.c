@@ -19,6 +19,10 @@ char *disemvowel(char *str) {
       index++;
     }	    
   }
+ 
+  if (strcmp(result, "")) {
+    free((char*)result);
+  }
 
   result[index] = '\0';
   return result;
